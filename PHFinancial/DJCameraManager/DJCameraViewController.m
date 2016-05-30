@@ -69,6 +69,13 @@
 
 - (void)doBack:(UIButton *)sender {
     
+    // 将上传成功的图片返回给上一个页面
+    
+    if (_collectionView.datalist.count >= 2) {
+        [_collectionView.datalist removeLastObject];
+        [self.imageDelegate getImagesWithArray:_collectionView.datalist];
+    }
+    
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
@@ -136,20 +143,9 @@
     [button addActionBlock:^(id sender) {
         [weak.manager takePhotoWithImageBlock:^(UIImage *originImage, UIImage *scaledImage, UIImage *croppedImage) {
             if (croppedImage) {
-                ImageItem *item = [[ImageItem alloc] init];
-                item.image = originImage;
-                item.isPleaseHolder = NO;
-                //
-                [_collectionView.datalist insertObject:item atIndex:0];
-                //
-                NSData *data = UIImageJPEGRepresentation(originImage, 0.6);
-                [self sendImageWithData:data];
                 
-                [_collectionView reloadData];
-                
-                NSIndexPath *indexPath = [NSIndexPath indexPathForItem:_collectionView.datalist.count-1 inSection:0];
-                
-                [_collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
+                [weak sendImageWithImage:originImage];
+
             }
             
         }];
@@ -166,7 +162,10 @@
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     WS(weak);
     [button addActionBlock:^(id sender) {
+        
+    
         [weak dismissViewControllerAnimated:YES completion:nil];
+        
     } forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
 }
@@ -177,12 +176,6 @@
  *  @param event
  */
 
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-//{
-//    UITouch *touch = [touches anyObject];
-//    CGPoint point = [touch locationInView:self.view];
-//    [self.manager focusInPoint:point];
-//}
 
 - (UIButton*)buildButton:(CGRect)frame
             normalImgStr:(NSString*)normalImgStr
@@ -205,18 +198,14 @@
     return btn;
 }
 
-#pragma -mark DJCameraDelegate
-- (void)cameraDidFinishFocus
-{
-//    NSLog(@"对焦结束了");
-}
-- (void)cameraDidStareFocus
-{
-//    NSLog(@"开始对焦");
-}
+
 
 #pragma mark --- 上传照片
-- (void)sendImageWithData:(NSData*)data{
+- (void)sendImageWithImage:(UIImage*)image{
+    __weak UIImage *wkImage = image;
+    __weak DJImageCollectionView *wkCollectionView = _collectionView;
+    NSData *data = UIImageJPEGRepresentation(image, 0.6);
+    
     SCLAlertView *alert = [[SCLAlertView alloc] init];
     alert.showAnimationType = SlideInToCenter;
     alert.hideAnimationType = SlideOutFromCenter;
@@ -254,6 +243,22 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
               NSLog(@"responseObject : %@", responseObject);
               NSDictionary *dic = responseObject;
               NSLog(@"dic %@",dic);
+              
+              NSString *rec = dic[@"rec"];
+              NSString *state = [NSString stringWithFormat:@"%@",rec];
+              
+              // 请求成功后保存数据
+              if ([state isEqualToString:@"0"]) {
+                  ImageItem *item = [[ImageItem alloc] init];
+                  item.image = wkImage;
+                  item.isPleaseHolder = NO;
+                  // 应该在图片上传成功后 将图片数据加到datalist
+                  [wkCollectionView.datalist insertObject:item atIndex:0];
+                  //
+                  [wkCollectionView reloadData];
+                  NSIndexPath *indexPath = [NSIndexPath indexPathForItem:wkCollectionView.datalist.count-1 inSection:0];
+                  [wkCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
+              }
               [[TKAlertCenter defaultCenter] postAlertWithMessage:dic[@"msg"]];
               return ;
               

@@ -12,16 +12,12 @@
 
 @interface PostTicketViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
-//    UITableView *_tableView;
     ImageCollectionView *_collectionView;
     NSMutableArray *_imageItems;
-    
     CGFloat _fristCellHeight;
     CGFloat _cellHeight;
     CGFloat _headerHeight;
-    
     NSArray *_titiles;
-    
 }
 @end
 
@@ -30,18 +26,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-
     self.title = @"我要出票";
-    
     NSArray *names = @[@"票据类型",@"出票银行",@"票面金额",@"到期时间",@"几手背书",@"汇票张数",@"交易城市"];
     _titiles = [NSMutableArray  arrayWithArray:names];
-    
-
     _imageItems = [NSMutableArray array];
-
     _cellHeight = 44;
-    
     [self _initTableView];
+    
+    ImageItem *item = [[ImageItem alloc] init];
+    item.image = [UIImage imageNamed:@"home_tab"];
+    item.isPleaseHolder = YES;
+    [_imageItems addObject:item];
     
     // 底部按钮
     UIButton *bottomBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -50,17 +45,11 @@
     bottomBtn.backgroundColor = [UIColor redColor];
     [bottomBtn setTitle:@"提交汇票" forState:UIControlStateNormal];
     [self.view addSubview:bottomBtn];
-    
-    
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    ImageItem *item6 = [[ImageItem alloc] init];
-    
-    [_imageItems addObject:item6];
-    
     
     if (_imageItems.count / 4 == 0) {
         _headerHeight = (_imageItems.count/4 + 1) * (kScreenWidth - 20)/4 + 50*kScaleX+10*kScaleY;
@@ -163,14 +152,10 @@
     flowLayout.minimumLineSpacing = 0;
     flowLayout.minimumInteritemSpacing = 0;
     
-
-//    if (_collectionView == nil) {
-    
     _collectionView = [[ImageCollectionView alloc] initWithFrame:CGRectMake(10,42*kScaleX,kScreenWidth - 20,_headerHeight - 50 - 10*kScaleY) collectionViewLayout:flowLayout];
     _collectionView.backgroundColor = [UIColor whiteColor];
         _collectionView.pTVC = self;
         [view addSubview:_collectionView];
-//    }
     
     _collectionView.frame = CGRectMake(10,42*kScaleX,kScreenWidth - 20,_headerHeight - 50*kScaleX - 10*kScaleY);//
     
@@ -201,7 +186,17 @@
     return _headerHeight;
 }
 
-#pragma mark -- collectionView
+#pragma mark -- 自定义相机代理方法
+- (void)getImagesWithArray:(NSMutableArray *)array{
+    if (array.count != 0) {
+        for (int i = 0; i < array.count ; i++) {
+            ImageItem *item = array[i];
+            [_imageItems insertObject:item atIndex:0];
+        }
+    }
+    [_tableView reloadData];
+}
+
 
 
 @end

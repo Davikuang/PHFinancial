@@ -71,11 +71,12 @@
 #import "PHFManager.h"
 #import "SMPageControl.h"
 
+
 //
 ////网络请求
-//#import "UIImageView+WebCache.h"
+#import "UIImageView+WebCache.h"
 //#import "UIButton+WebCache.h"
-//#import "UIViewExt.h"
+#import "UIViewExt.h"
 ////#import "MBProgressHUD.h"
 #import "AFNetworking.h"
 //#import "TKAlertCenter.h"

@@ -104,6 +104,13 @@
 		6E474C471CF84A7F005D5600 /* TradeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E474C461CF84A7F005D5600 /* TradeView.m */; };
 		6E474C491CF85C9D005D5600 /* ccmask.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E474C481CF85C9D005D5600 /* ccmask.png */; };
 		6EE5FD4C1CF5E8C200F8B475 /* MyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE5FD4B1CF5E8C200F8B475 /* MyTextField.m */; };
+		6EEE59501CFBE80D0015017D /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE594D1CFBE80D0015017D /* CycleScrollView.m */; };
+		6EEE59511CFBE80D0015017D /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE594F1CFBE80D0015017D /* NSTimer+Addition.m */; };
+		6EEE59571CFC083F0015017D /* kHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE59561CFC083F0015017D /* kHomeModel.m */; };
+		6EEE595C1CFC08E30015017D /* HomeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE59591CFC08E30015017D /* HomeImageView.m */; };
+		6EEE595D1CFC08E30015017D /* homeItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE595B1CFC08E30015017D /* homeItemView.m */; };
+		6EEE59611CFC31CE0015017D /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE59601CFC31CE0015017D /* SettingViewController.m */; };
+		6EEE59641CFC35700015017D /* NumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE59631CFC35700015017D /* NumberView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -318,6 +325,20 @@
 		6E474C481CF85C9D005D5600 /* ccmask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ccmask.png; sourceTree = "<group>"; };
 		6EE5FD4A1CF5E8C200F8B475 /* MyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTextField.h; sourceTree = "<group>"; };
 		6EE5FD4B1CF5E8C200F8B475 /* MyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTextField.m; sourceTree = "<group>"; };
+		6EEE594C1CFBE80D0015017D /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
+		6EEE594D1CFBE80D0015017D /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
+		6EEE594E1CFBE80D0015017D /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
+		6EEE594F1CFBE80D0015017D /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
+		6EEE59551CFC083F0015017D /* kHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kHomeModel.h; sourceTree = "<group>"; };
+		6EEE59561CFC083F0015017D /* kHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kHomeModel.m; sourceTree = "<group>"; };
+		6EEE59581CFC08E30015017D /* HomeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeImageView.h; sourceTree = "<group>"; };
+		6EEE59591CFC08E30015017D /* HomeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeImageView.m; sourceTree = "<group>"; };
+		6EEE595A1CFC08E30015017D /* homeItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = homeItemView.h; sourceTree = "<group>"; };
+		6EEE595B1CFC08E30015017D /* homeItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homeItemView.m; sourceTree = "<group>"; };
+		6EEE595F1CFC31CE0015017D /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		6EEE59601CFC31CE0015017D /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		6EEE59621CFC35700015017D /* NumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberView.h; sourceTree = "<group>"; };
+		6EEE59631CFC35700015017D /* NumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -419,6 +440,7 @@
 		6AB2BD0F1CEB29890066CE16 /* 第三方 */ = {
 			isa = PBXGroup;
 			children = (
+				6EEE594B1CFBE80D0015017D /* CycleScrollView+NSTimer */,
 				6E474C3A1CF82523005D5600 /* SMPageControll */,
 				6EE5FD491CF5E8B200F8B475 /* MyTextFeild */,
 				6AB2BDC21CEB47DB0066CE16 /* UIView + TKCartgory */,
@@ -440,7 +462,6 @@
 			children = (
 				6E474C3E1CF83684005D5600 /* WBImageView.h */,
 				6E474C3F1CF83684005D5600 /* WBImageView.m */,
-				6E0615CD1CF686C60087E89E /* DJCameraManager */,
 				6AB2BDE61CEC14440066CE16 /* BaseNav */,
 				6AB2BDA01CEB39170066CE16 /* BaseVC */,
 				6AB2BD9D1CEB38B60066CE16 /* NoticeLabel.h */,
@@ -699,6 +720,7 @@
 				6E3FDF331CF55631002C6F49 /* PostTicketViewController.m */,
 				6E0615F31CF6F6900087E89E /* MessageViewController.h */,
 				6E0615F41CF6F6900087E89E /* MessageViewController.m */,
+				6E0615CD1CF686C60087E89E /* DJCameraManager */,
 			);
 			name = "首页";
 			sourceTree = "<group>";
@@ -724,6 +746,7 @@
 		6AB2BDD61CEBFC8A0066CE16 /* 我的 */ = {
 			isa = PBXGroup;
 			children = (
+				6EEE595E1CFC31B00015017D /* 设置 */,
 				6AB2BDDD1CEC11680066CE16 /* PersonalViewController.h */,
 				6AB2BDDE1CEC11680066CE16 /* PersonalViewController.m */,
 			);
@@ -783,6 +806,8 @@
 		6E0615F61CF6F69E0087E89E /* model */ = {
 			isa = PBXGroup;
 			children = (
+				6EEE59551CFC083F0015017D /* kHomeModel.h */,
+				6EEE59561CFC083F0015017D /* kHomeModel.m */,
 				6E3FDF351CF56F82002C6F49 /* ImageItem.h */,
 				6E3FDF361CF56F82002C6F49 /* ImageItem.m */,
 			);
@@ -792,8 +817,14 @@
 		6E0615F71CF6F6A50087E89E /* view */ = {
 			isa = PBXGroup;
 			children = (
+				6EEE59581CFC08E30015017D /* HomeImageView.h */,
+				6EEE59591CFC08E30015017D /* HomeImageView.m */,
+				6EEE595A1CFC08E30015017D /* homeItemView.h */,
+				6EEE595B1CFC08E30015017D /* homeItemView.m */,
 				6E3FDF371CF56F82002C6F49 /* ImageCollectionView.h */,
 				6E3FDF381CF56F82002C6F49 /* ImageCollectionView.m */,
+				6EEE59621CFC35700015017D /* NumberView.h */,
+				6EEE59631CFC35700015017D /* NumberView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -847,6 +878,26 @@
 				6EE5FD4B1CF5E8C200F8B475 /* MyTextField.m */,
 			);
 			name = MyTextFeild;
+			sourceTree = "<group>";
+		};
+		6EEE594B1CFBE80D0015017D /* CycleScrollView+NSTimer */ = {
+			isa = PBXGroup;
+			children = (
+				6EEE594C1CFBE80D0015017D /* CycleScrollView.h */,
+				6EEE594D1CFBE80D0015017D /* CycleScrollView.m */,
+				6EEE594E1CFBE80D0015017D /* NSTimer+Addition.h */,
+				6EEE594F1CFBE80D0015017D /* NSTimer+Addition.m */,
+			);
+			path = "CycleScrollView+NSTimer";
+			sourceTree = "<group>";
+		};
+		6EEE595E1CFC31B00015017D /* 设置 */ = {
+			isa = PBXGroup;
+			children = (
+				6EEE595F1CFC31CE0015017D /* SettingViewController.h */,
+				6EEE59601CFC31CE0015017D /* SettingViewController.m */,
+			);
+			name = "设置";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1004,6 +1055,7 @@
 				6E0615E21CF68E980087E89E /* PHUserManager.m in Sources */,
 				6AB2BD4F1CEB2EAC0066CE16 /* UIImageView+WebCache.m in Sources */,
 				6AB2BDB51CEB473D0066CE16 /* SCLAlertView.m in Sources */,
+				6EEE595D1CFC08E30015017D /* homeItemView.m in Sources */,
 				6AB2BDD91CEBFFDF0066CE16 /* PHFManager.m in Sources */,
 				6E474C351CF81C67005D5600 /* TapImageView.m in Sources */,
 				6AB2BD9F1CEB38B60066CE16 /* NoticeLabel.m in Sources */,
@@ -1012,8 +1064,11 @@
 				6AB2BD4D1CEB2EAC0066CE16 /* UIImage+WebP.m in Sources */,
 				6E0615DE1CF686C60087E89E /* UIButton+DJBlock.m in Sources */,
 				6E474C471CF84A7F005D5600 /* TradeView.m in Sources */,
+				6EEE59501CFBE80D0015017D /* CycleScrollView.m in Sources */,
+				6EEE59641CFC35700015017D /* NumberView.m in Sources */,
 				6AB2BDC71CEB48120066CE16 /* SFHFKeychainUtils.m in Sources */,
 				6AB2BD491CEB2EAC0066CE16 /* SDWebImagePrefetcher.m in Sources */,
+				6EEE59571CFC083F0015017D /* kHomeModel.m in Sources */,
 				6E0615F21CF6F49C0087E89E /* GuideViewController.m in Sources */,
 				6AB2BD911CEB37780066CE16 /* UIScrollView+MJRefresh.m in Sources */,
 				6AB2BDDF1CEC11680066CE16 /* PersonalViewController.m in Sources */,
@@ -1025,6 +1080,7 @@
 				6AB2BDBA1CEB473D0066CE16 /* SCLTextView.m in Sources */,
 				6AB2BDC01CEB47A10066CE16 /* iVersion.m in Sources */,
 				6AB2BDDC1CEC0FE10066CE16 /* HomeViewController.m in Sources */,
+				6EEE59511CFBE80D0015017D /* NSTimer+Addition.m in Sources */,
 				6AB2BD451CEB2EAC0066CE16 /* SDWebImageDecoder.m in Sources */,
 				6AB2BD461CEB2EAC0066CE16 /* SDWebImageDownloader.m in Sources */,
 				6AB2BDC11CEB47A10066CE16 /* TKAlertCenter.m in Sources */,
@@ -1063,6 +1119,7 @@
 				6AB2BDB41CEB473D0066CE16 /* UIImage+ImageEffects.m in Sources */,
 				6AB2BD401CEB2EAC0066CE16 /* NSData+ImageContentType.m in Sources */,
 				6E0615DD1CF686C60087E89E /* PhotoViewController.m in Sources */,
+				6EEE59611CFC31CE0015017D /* SettingViewController.m in Sources */,
 				6E3FDF3A1CF56F82002C6F49 /* ImageCollectionView.m in Sources */,
 				6AB2BD8C1CEB37780066CE16 /* MJRefreshBaseView.m in Sources */,
 				6AB2BCDC1CEB27260066CE16 /* main.m in Sources */,
@@ -1072,6 +1129,7 @@
 				6AB2BD431CEB2EAC0066CE16 /* SDImageCache.m in Sources */,
 				6E3FDF341CF55631002C6F49 /* PostTicketViewController.m in Sources */,
 				6E0615EE1CF6F3590087E89E /* ForgetPasswordViewController.m in Sources */,
+				6EEE595C1CFC08E30015017D /* HomeImageView.m in Sources */,
 				6AB2BD6F1CEB2F3B0066CE16 /* AFHTTPSessionManager.m in Sources */,
 				6E474C431CF83F83005D5600 /* PHScrollView.m in Sources */,
 			);
@@ -1212,7 +1270,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = /Users/kuang/Desktop/PHFinancial/PHFinancialTests/PrefixHeader.pch;
 				INFOPLIST_FILE = PHFinancial/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.puhuipiaoju;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1228,7 +1286,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = /Users/kuang/Desktop/PHFinancial/PHFinancialTests/PrefixHeader.pch;
 				INFOPLIST_FILE = PHFinancial/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.puhuipiaoju;
 				PRODUCT_NAME = "$(TARGET_NAME)";

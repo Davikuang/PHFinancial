@@ -17,17 +17,18 @@
         
         _itemButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _itemButton.frame = self.bounds;
+//        _itemButton.contentMode = UIViewContentModeScaleAspectFit;
         _itemButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0,10, 0);
         [self addSubview:_itemButton];
         [_itemButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchDown];
         
-        _itemLabl = [[UILabel alloc] initWithFrame:CGRectMake(0,kTabBarHeight-22,frame.size.width, 20)];
+        _itemLabl = [[UILabel alloc] initWithFrame:CGRectMake(0,kTabBarHeight-21,frame.size.width, 20)];
         _itemLabl.textColor = [UIColor whiteColor];
-        _itemLabl.highlightedTextColor = [UIColor colorWithHexString:kLitleBlue];
+        _itemLabl.highlightedTextColor = [UIColor redColor];
         _itemLabl.textAlignment = NSTextAlignmentCenter;
         _itemLabl.backgroundColor = [UIColor clearColor];
         _itemLabl.textColor = [UIColor grayColor];
-        _itemLabl.font = [UIFont systemFontOfSize:9];
+        _itemLabl.font = [UIFont systemFontOfSize:10];
         [self addSubview:_itemLabl];
         [self addSubview:_itemButton];
         

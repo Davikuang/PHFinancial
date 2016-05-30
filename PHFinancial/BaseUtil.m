@@ -870,6 +870,9 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:channel_key forKey:@"channel"];
     [dic setObject:kAPI_timestamp forKey:@"time"];
+    [dic setObject:APPVersion forKey:@"appver"];
+
+//    appver
     
     NSArray *sDicKeys = spDic.allKeys;
     for (int i = 0; i<sDicKeys.count; i++) {

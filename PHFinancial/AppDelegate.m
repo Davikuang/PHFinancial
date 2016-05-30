@@ -21,7 +21,6 @@
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [_window makeKeyAndVisible];
     _window.backgroundColor = [UIColor whiteColor];
-    
    //首 次进入
 //    if (![[NSUserDefaults standardUserDefaults] valueForKey:@"launchflag"]) {
 //        NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
@@ -42,7 +41,7 @@
     if (k_phone&&k_password) {
         [self doLogin];
     }
-    
+     [[UIApplication  sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     return YES;
 }
 

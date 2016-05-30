@@ -1,33 +1,23 @@
 //
-//  FTicketViewController.m
+//  SettingViewController.m
 //  PHFinancial
 //
-//  Created by PuhuiMac01 on 16/5/18.
+//  Created by 匡 on 16/5/30.
 //  Copyright © 2016年 PuHuiFinancial. All rights reserved.
 //
 
-#import "FTicketViewController.h"
+#import "SettingViewController.h"
 
-@interface FTicketViewController ()
+@interface SettingViewController ()
 
 @end
 
-@implementation FTicketViewController
+@implementation SettingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor grayColor];
-    
-
-}
-
-- (void)_initNavBar {
-    
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {

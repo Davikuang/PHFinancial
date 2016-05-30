@@ -23,7 +23,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self _createTabBarController];
+    
     [self _createTabBar];
+    
+    [[UIApplication  sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,8 +57,7 @@
     
     for (UIViewController * item in arr) {
         BaseNavigationController *navigation = [[BaseNavigationController alloc] initWithRootViewController:item];
-        
-        //        [navigation.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bg_all@2x"] forBarMetrics:UIBarMetricsDefault];
+        navigation.navigationBar.barTintColor = [UIColor colorWithHexString:@"d71d18"];
         
         [arraysNVC addObject:navigation];
     }
@@ -81,14 +84,14 @@
     tbImg.frame = self.tabBar.bounds;
     tbImg.userInteractionEnabled = YES;
     //    [self.tabBar addSubview:tbImg];
-    
+    self.tabBar.backgroundColor = [UIColor whiteColor];
     
     // 添加选中图片，选中图片必须放在下面，即优先加载否则会盖住下面的图标
     CGFloat width = kScreenWidth/self.viewControllers.count;
     
     //给TabBar添加按钮
-    NSArray *images = @[@"Home", @"Grid", @"UserProfile", @"Shopping"];
-    NSArray *select =@[@"首页", @"服务", @"我的",@"商品"];
+    NSArray *images = @[@"home_tab", @"ticket_tab", @"info_tab", @"person_tab"];
+    NSArray *select =@[@"home_tabs", @"ticket_tabs", @"info_tabs",@"person_tabs"];
     
     NSArray *titles = @[@"首页", @"找票", @"咨询",@"我的"];
     
@@ -96,6 +99,9 @@
     for (int i = 0 ;i < self.viewControllers.count ; i++ ) {
         ItemView *itemView = [[ItemView alloc] initWithFrame:CGRectMake(i*width, 0, width, kTabBarHeight)];
         [itemView setItemImage:[UIImage imageNamed:images[i]] forState:UIControlStateNormal];
+        
+        
+//        [itemView s];
         [itemView setItemImage:[UIImage imageNamed:select[i]] forState:UIControlStateSelected];
         [itemView setItemTitle:titles[i]];
         itemView.tag = 100+i;

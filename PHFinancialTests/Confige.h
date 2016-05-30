@@ -30,6 +30,8 @@
 #define kAPI_timestamp [NSString stringWithFormat:@"%ld",(long)[[NSDate date] timeIntervalSince1970]]
 #define channel_key  @"922f460018319df14bbe7fcc62806b0d"
 #define channel_secret  @"aa9dbdb3f0e8bce8fd8acbcb3a72b751"
+#define APPVersion   [[[NSBundle mainBundle ] infoDictionary] objectForKey:@"CFBundleVersion"]
+
 
 // 用于判断是哪类产品
 typedef enum {
@@ -42,8 +44,6 @@ typedef enum {
 }COMMONGOODS_TYPE;
 
 
-// 通用商品支付
-#define KCommenPay @"KCommenPay"
 
 // 代码适配  6
 #define kScaleX [UIScreen mainScreen].bounds.size.width/375
@@ -63,7 +63,8 @@ typedef enum {
 #define kTabBarHeight  49.0f
 #define kNavBar 64.0f
 
-//主体背景颜色  颜色管理
+//主体颜色  颜色管理
+#define kThemeColor @"d71d18" // 红色
 
 // 字体颜色
 #define kWORDCOLOR @"4F5E5E"
@@ -85,7 +86,6 @@ typedef enum {
 
 
 //
-#define APPVersion   [[[NSBundle mainBundle ] infoDictionary] objectForKey:@"CFBundleVersion"]
 
 //ios系统版本
 #define ios8x [[[UIDevice currentDevice] systemVersion] floatValue] >=8.0f

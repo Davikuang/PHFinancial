@@ -29,7 +29,6 @@ static NSString *CellIdentifier = @"CollectionCellIdentifier";
     return _datalist.count;
 }
 
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 //每个UICollectionView展示的内容
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {

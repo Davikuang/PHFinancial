@@ -32,7 +32,6 @@ static NSString *CellIdentifier = @"CollectionCellIdentifier";
     return _datalist.count;
 }
 
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 //每个UICollectionView展示的内容
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -67,19 +66,15 @@ static NSString *CellIdentifier = @"CollectionCellIdentifier";
         ImageItem *item = _datalist[indexPath.row];
         if (item.isPleaseHolder == YES) {
             // 正常照片  没有点击事件
-            NSLog(@"点击了Image");
-            return;
+            DJCameraViewController *VC = [DJCameraViewController new];
+            VC.imageDelegate = self.pTVC;
+            [self.pTVC presentViewController:VC animated:YES completion:nil];
         }else{
             // 添加点击添加照片事件
             // 当改变行数的时候  相对页面也要发生改变
             NSLog(@"点击了Image");
 
         }
-        
-        DJCameraViewController *VC = [DJCameraViewController new];
-        
-        [self.pTVC presentViewController:VC animated:YES completion:nil];
-
     }
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
