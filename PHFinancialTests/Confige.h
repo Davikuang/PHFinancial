@@ -61,7 +61,8 @@ typedef enum {
 
 //主体颜色  颜色管理
 #define kThemeColor @"d71d18" // 红色
-
+#define kGrayColor @"666666"  // 灰色
+#define kBlackColor @"333333" // 黑色
 // 字体颜色
 #define kWORDCOLOR @"4F5E5E"
 #define kBGCOLOR @"F3F3F3"

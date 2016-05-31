@@ -9,7 +9,6 @@
 #import "PostTicketViewController.h"
 #import "ImageCollectionView.h"
 #import "ImageItem.h"
-
 @interface PostTicketViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     ImageCollectionView *_collectionView;
@@ -30,7 +29,13 @@
     NSArray *names = @[@"票据类型",@"出票银行",@"票面金额",@"到期时间",@"几手背书",@"汇票张数",@"交易城市"];
     _titiles = [NSMutableArray  arrayWithArray:names];
     _imageItems = [NSMutableArray array];
-    _cellHeight = 44;
+    _cellHeight = 49;
+    if (IS_IPHONE_4) {
+        _cellHeight = 44;
+    }
+    if (IS_IPHONE_5) {
+        _cellHeight = 44;
+    }
     [self _initTableView];
     
     ImageItem *item = [[ImageItem alloc] init];
@@ -103,7 +108,7 @@
             [cell.contentView addSubview:title];
             
             UILabel *line = [[UILabel alloc] initWithFrame:CGRectMake(10, _cellHeight-0.5, kScreenWidth - 20, 0.5)];
-            line.backgroundColor = [UIColor lightGrayColor];
+            line.backgroundColor = [UIColor colorWithHexString:@"d2d2d2"];
             [cell.contentView addSubview:line];
             
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -115,16 +120,18 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellId];
             
             UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 100, 30)];
-            title.font = [UIFont systemFontOfSize:14];
+            title.font = [UIFont systemFontOfSize:15];
+            title.textColor = [UIColor colorWithHexString:kGrayColor];
             title.text = _titiles[indexPath.row];
             [cell.contentView addSubview:title];
             
             MyTextField *tf = [[MyTextField alloc] initWithFrame:CGRectMake(title.right, 10, 100, 30)];
             tf.placeholder = @"请输入金额";
+            tf.font = [UIFont systemFontOfSize:15];
             [cell.contentView addSubview:tf];
             
             UILabel *line = [[UILabel alloc] initWithFrame:CGRectMake(10, _cellHeight-0.5, kScreenWidth - 20, 0.5)];
-            line.backgroundColor = [UIColor lightGrayColor];
+            line.backgroundColor = [UIColor colorWithHexString:@"d2dede"];
             [cell.contentView addSubview:line];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
@@ -143,8 +150,10 @@
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, _headerHeight)];
     view.backgroundColor = [UIColor whiteColor];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMakeAT(10, 15, 100, 25)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 15*kScaleX, 100, 20)];
     label.text = @"票据照片";
+    label.textColor = [UIColor colorWithHexString:kGrayColor];
+    label.font = [UIFont systemFontOfSize:15];
     [view addSubview:label];
   
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];

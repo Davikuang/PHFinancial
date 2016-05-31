@@ -15,7 +15,6 @@
     SMPageControl *_pageControl;
     UIView *_bgView;
     UIView *_bgNavView;
-
     TradeView *_tradeView;
 }
 @end
@@ -23,13 +22,12 @@
 @implementation DraftDetailViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self _initTableView];
-
     [self _initMaskView];
-    
     UIButton *bottomBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     bottomBtn.frame = CGRectMake(0,kScreenHeight - kNavBar -kTabBarHeight,kScreenWidth, 49);
     [bottomBtn setTitle:@"提交报价" forState:UIControlStateNormal];

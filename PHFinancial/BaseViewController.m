@@ -87,20 +87,19 @@
 // 导航栏返回按钮
 - (void)_initNaviButton {
     
-//    CGRect buttonFrame = CGRectMake(20, 30, 100, 44);
-//    UIButton *left = [UIButton buttonWithType:UIButtonTypeCustom];
-//    left.frame = buttonFrame;
-//   
-//
-//    [left setBackgroundImage:[UIImage imageNamed:@"leftarrow.png"] forState:UIControlStateNormal];
-//    [left addTarget:self action:@selector(leftButtonAction:) forControlEvents:UIControlEventTouchDown];
-//    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithCustomView:left];
-//    if (self.navigationController.viewControllers.count == 1) {
-//        left.hidden = YES;
-//    }
-//    self.navigationItem.leftBarButtonItem = leftButton;
-    // 不用自定义
-    [self.navigationController.navigationItem.leftBarButtonItem setImage:[UIImage imageNamed:@"  "]];
+    CGRect buttonFrame = CGRectMake(0, 20, 44, 44);
+    UIButton *left = [UIButton buttonWithType:UIButtonTypeCustom];
+    left.frame = buttonFrame;
+   
+    [left setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    [left addTarget:self action:@selector(leftButtonAction:) forControlEvents:UIControlEventTouchDown];
+    [left setImageEdgeInsets:UIEdgeInsetsMake(0, -14, 0, 14)];
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithCustomView:left];
+    if (self.navigationController.viewControllers.count == 1) {
+        left.hidden = YES;
+    }
+    self.navigationItem.leftBarButtonItem = leftButton;
+
 }
 
 

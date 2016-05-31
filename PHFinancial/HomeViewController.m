@@ -8,13 +8,16 @@
 
 #import "HomeViewController.h"
 #import "FTicketViewController.h"
-#import "PostTicketViewController.h"
 #import "MessageViewController.h"
 #import "DraftDetailViewController.h"
 #import "CycleScrollView.h"
 #import "kHomeModel.h"
 #import "HomeImageView.h"
 #import "NumberView.h"
+#import "PostTicketListViewController.h"
+
+#import "LoginViewController.h"
+
 @interface HomeViewController (){
     NSMutableArray *_imagelist;
     kHomeModel *_model;
@@ -277,7 +280,7 @@
     // 设置标题
     [mesButton setImage:[UIImage imageNamed:@"horn"] forState:UIControlStateNormal];
     // 修改样式
-    mesButton.imageEdgeInsets = UIEdgeInsetsMake(0,12,0,-12);
+    mesButton.imageEdgeInsets = UIEdgeInsetsMake(0,13,0,-13);
     // 添加事件
     [mesButton addTarget:self action:@selector(mesAction:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:mesButton];
@@ -429,17 +432,25 @@
 - (void)btnAction:(UIButton *)sender {
     
     // 出票
-    PostTicketViewController *vc = [[PostTicketViewController alloc] init];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
+//    PostTicketListViewController *vc = [[PostTicketListViewController alloc] init];
+//    vc.hidesBottomBarWhenPushed = YES;
+//    self.view.backgroundColor = [UIColor whiteColor];
+    
+    LoginViewController *vc = [[LoginViewController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
     
 }
 
+// 我要出票按钮
 - (void)btnAction1:(UIButton *)sender {
     
     // 出票
     DraftDetailViewController *vc = [[DraftDetailViewController alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
+    vc.view.backgroundColor = [UIColor greenColor];
     [self.navigationController pushViewController:vc animated:YES];
     
 }

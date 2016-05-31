@@ -91,6 +91,8 @@
 		6E0615EE1CF6F3590087E89E /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0615ED1CF6F3590087E89E /* ForgetPasswordViewController.m */; };
 		6E0615F21CF6F49C0087E89E /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0615F11CF6F49C0087E89E /* GuideViewController.m */; };
 		6E0615F51CF6F6900087E89E /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0615F41CF6F6900087E89E /* MessageViewController.m */; };
+		6E350DF51CFD81D900530A13 /* PostTicketListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E350DF41CFD81D900530A13 /* PostTicketListViewController.m */; };
+		6E350DF81CFDA35100530A13 /* PostTicketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E350DF71CFDA35100530A13 /* PostTicketModel.m */; };
 		6E3FDF341CF55631002C6F49 /* PostTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FDF331CF55631002C6F49 /* PostTicketViewController.m */; };
 		6E3FDF391CF56F82002C6F49 /* ImageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FDF361CF56F82002C6F49 /* ImageItem.m */; };
 		6E3FDF3A1CF56F82002C6F49 /* ImageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FDF381CF56F82002C6F49 /* ImageCollectionView.m */; };
@@ -303,6 +305,10 @@
 		6E0615F11CF6F49C0087E89E /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		6E0615F31CF6F6900087E89E /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		6E0615F41CF6F6900087E89E /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		6E350DF31CFD81D900530A13 /* PostTicketListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTicketListViewController.h; sourceTree = "<group>"; };
+		6E350DF41CFD81D900530A13 /* PostTicketListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTicketListViewController.m; sourceTree = "<group>"; };
+		6E350DF61CFDA35100530A13 /* PostTicketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTicketModel.h; sourceTree = "<group>"; };
+		6E350DF71CFDA35100530A13 /* PostTicketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTicketModel.m; sourceTree = "<group>"; };
 		6E3FDF321CF55631002C6F49 /* PostTicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTicketViewController.h; sourceTree = "<group>"; };
 		6E3FDF331CF55631002C6F49 /* PostTicketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTicketViewController.m; sourceTree = "<group>"; };
 		6E3FDF351CF56F82002C6F49 /* ImageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageItem.h; sourceTree = "<group>"; };
@@ -719,15 +725,13 @@
 		6AB2BDD31CEBFC680066CE16 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				6E350DEF1CFD818600530A13 /* 我要出票 */,
 				6E0615F71CF6F6A50087E89E /* view */,
 				6E0615F61CF6F69E0087E89E /* model */,
 				6AB2BDDA1CEC0FE10066CE16 /* HomeViewController.h */,
 				6AB2BDDB1CEC0FE10066CE16 /* HomeViewController.m */,
-				6E3FDF321CF55631002C6F49 /* PostTicketViewController.h */,
-				6E3FDF331CF55631002C6F49 /* PostTicketViewController.m */,
 				6E0615F31CF6F6900087E89E /* MessageViewController.h */,
 				6E0615F41CF6F6900087E89E /* MessageViewController.m */,
-				6E0615CD1CF686C60087E89E /* DJCameraManager */,
 			);
 			name = "首页";
 			sourceTree = "<group>";
@@ -815,8 +819,6 @@
 			children = (
 				6EEE59551CFC083F0015017D /* kHomeModel.h */,
 				6EEE59561CFC083F0015017D /* kHomeModel.m */,
-				6E3FDF351CF56F82002C6F49 /* ImageItem.h */,
-				6E3FDF361CF56F82002C6F49 /* ImageItem.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -828,12 +830,52 @@
 				6EEE59591CFC08E30015017D /* HomeImageView.m */,
 				6EEE595A1CFC08E30015017D /* homeItemView.h */,
 				6EEE595B1CFC08E30015017D /* homeItemView.m */,
-				6E3FDF371CF56F82002C6F49 /* ImageCollectionView.h */,
-				6E3FDF381CF56F82002C6F49 /* ImageCollectionView.m */,
 				6EEE59621CFC35700015017D /* NumberView.h */,
 				6EEE59631CFC35700015017D /* NumberView.m */,
 			);
 			name = view;
+			sourceTree = "<group>";
+		};
+		6E350DEF1CFD818600530A13 /* 我要出票 */ = {
+			isa = PBXGroup;
+			children = (
+				6E350DF21CFD81A500530A13 /* View */,
+				6E350DF11CFD819900530A13 /* Model */,
+				6E350DF01CFD819100530A13 /* VC */,
+			);
+			name = "我要出票";
+			sourceTree = "<group>";
+		};
+		6E350DF01CFD819100530A13 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				6E0615CD1CF686C60087E89E /* DJCameraManager */,
+				6E350DF31CFD81D900530A13 /* PostTicketListViewController.h */,
+				6E350DF41CFD81D900530A13 /* PostTicketListViewController.m */,
+				6E3FDF321CF55631002C6F49 /* PostTicketViewController.h */,
+				6E3FDF331CF55631002C6F49 /* PostTicketViewController.m */,
+			);
+			name = VC;
+			sourceTree = "<group>";
+		};
+		6E350DF11CFD819900530A13 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6E3FDF351CF56F82002C6F49 /* ImageItem.h */,
+				6E3FDF361CF56F82002C6F49 /* ImageItem.m */,
+				6E350DF61CFDA35100530A13 /* PostTicketModel.h */,
+				6E350DF71CFDA35100530A13 /* PostTicketModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6E350DF21CFD81A500530A13 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6E3FDF371CF56F82002C6F49 /* ImageCollectionView.h */,
+				6E3FDF381CF56F82002C6F49 /* ImageCollectionView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		6E474C2D1CF81222005D5600 /* 汇票详情 */ = {
@@ -1059,9 +1101,11 @@
 				6AB2BD711CEB2F3B0066CE16 /* AFSecurityPolicy.m in Sources */,
 				6E474C391CF81E04005D5600 /* ImageDetailViewController.m in Sources */,
 				6E3FDF391CF56F82002C6F49 /* ImageItem.m in Sources */,
+				6E350DF51CFD81D900530A13 /* PostTicketListViewController.m in Sources */,
 				6AB2BDA31CEB39220066CE16 /* BaseViewController.m in Sources */,
 				6E0615DB1CF686C60087E89E /* DJCameraViewController.m in Sources */,
 				6AB2BD171CEB29F00066CE16 /* WPAutoSpringTextViewController.m in Sources */,
+				6E350DF81CFDA35100530A13 /* PostTicketModel.m in Sources */,
 				6AB2BD4E1CEB2EAC0066CE16 /* UIImageView+HighlightedWebCache.m in Sources */,
 				6AB2BDB91CEB473D0066CE16 /* SCLTimerDisplay.m in Sources */,
 				6AB2BDB61CEB473D0066CE16 /* SCLButton.m in Sources */,
