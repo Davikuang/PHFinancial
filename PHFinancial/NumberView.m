@@ -24,7 +24,7 @@
             UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0,i*(self.height), self.width, self.height - 2)];
             label.text = [NSString stringWithFormat:@"%d",i];
             label.textAlignment = 1;
-            label.font = [UIFont boldSystemFontOfSize:42];
+            label.font = [UIFont boldSystemFontOfSize:46*kScaleX];
             label.textColor = [UIColor whiteColor];
             label.backgroundColor = color;
             

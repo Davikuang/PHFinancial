@@ -104,6 +104,8 @@
 		6E474C471CF84A7F005D5600 /* TradeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E474C461CF84A7F005D5600 /* TradeView.m */; };
 		6E474C491CF85C9D005D5600 /* ccmask.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E474C481CF85C9D005D5600 /* ccmask.png */; };
 		6EE5FD4C1CF5E8C200F8B475 /* MyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE5FD4B1CF5E8C200F8B475 /* MyTextField.m */; };
+		6EEE21681CFD549500663DA7 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEE21671CFD549500663DA7 /* fire.png */; };
+		6EEE216B1CFD662000663DA7 /* MyPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE216A1CFD662000663DA7 /* MyPageControl.m */; };
 		6EEE59501CFBE80D0015017D /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE594D1CFBE80D0015017D /* CycleScrollView.m */; };
 		6EEE59511CFBE80D0015017D /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE594F1CFBE80D0015017D /* NSTimer+Addition.m */; };
 		6EEE59571CFC083F0015017D /* kHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE59561CFC083F0015017D /* kHomeModel.m */; };
@@ -325,6 +327,9 @@
 		6E474C481CF85C9D005D5600 /* ccmask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ccmask.png; sourceTree = "<group>"; };
 		6EE5FD4A1CF5E8C200F8B475 /* MyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTextField.h; sourceTree = "<group>"; };
 		6EE5FD4B1CF5E8C200F8B475 /* MyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTextField.m; sourceTree = "<group>"; };
+		6EEE21671CFD549500663DA7 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
+		6EEE21691CFD662000663DA7 /* MyPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageControl.h; sourceTree = "<group>"; };
+		6EEE216A1CFD662000663DA7 /* MyPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPageControl.m; sourceTree = "<group>"; };
 		6EEE594C1CFBE80D0015017D /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
 		6EEE594D1CFBE80D0015017D /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
 		6EEE594E1CFBE80D0015017D /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
@@ -460,6 +465,7 @@
 		6AB2BD101CEB29970066CE16 /* 基类 */ = {
 			isa = PBXGroup;
 			children = (
+				6EEE216C1CFD662800663DA7 /* 自定义PageControl */,
 				6E474C3E1CF83684005D5600 /* WBImageView.h */,
 				6E474C3F1CF83684005D5600 /* WBImageView.m */,
 				6AB2BDE61CEC14440066CE16 /* BaseNav */,
@@ -482,6 +488,7 @@
 		6AB2BD111CEB29AD0066CE16 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6EEE21671CFD549500663DA7 /* fire.png */,
 				6AB2BDEC1CEC1E030066CE16 /* NavBg.png */,
 				6E474C481CF85C9D005D5600 /* ccmask.png */,
 				6E474C311CF81BF2005D5600 /* image.jpg */,
@@ -880,6 +887,15 @@
 			name = MyTextFeild;
 			sourceTree = "<group>";
 		};
+		6EEE216C1CFD662800663DA7 /* 自定义PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				6EEE21691CFD662000663DA7 /* MyPageControl.h */,
+				6EEE216A1CFD662000663DA7 /* MyPageControl.m */,
+			);
+			name = "自定义PageControl";
+			sourceTree = "<group>";
+		};
 		6EEE594B1CFBE80D0015017D /* CycleScrollView+NSTimer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1007,6 +1023,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AB2BCEA1CEB27260066CE16 /* LaunchScreen.storyboard in Resources */,
+				6EEE21681CFD549500663DA7 /* fire.png in Resources */,
 				6E474C491CF85C9D005D5600 /* ccmask.png in Resources */,
 				6AB2BD3E1CEB2EAC0066CE16 /* Default-568h@2x.png in Resources */,
 				6AB2BDED1CEC1E030066CE16 /* NavBg.png in Resources */,
@@ -1075,6 +1092,7 @@
 				6AB2BD901CEB37780066CE16 /* UIScrollView+MJExtension.m in Sources */,
 				6AB2BDE21CEC11CA0066CE16 /* FTicketViewController.m in Sources */,
 				6AB2BD181CEB29F00066CE16 /* UIResponder+FirstResponder.m in Sources */,
+				6EEE216B1CFD662000663DA7 /* MyPageControl.m in Sources */,
 				6AB2BD751CEB2F3B0066CE16 /* AFURLSessionManager.m in Sources */,
 				6E0615E71CF6F3110087E89E /* LoginViewController.m in Sources */,
 				6AB2BDBA1CEB473D0066CE16 /* SCLTextView.m in Sources */,

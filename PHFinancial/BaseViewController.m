@@ -26,6 +26,14 @@
     
     self.navigationController.navigationBar.translucent = NO;
     
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                     [UIColor whiteColor], UITextAttributeTextColor,
+                                                                     [UIColor whiteColor], UITextAttributeTextShadowColor,
+                                                                     [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,
+                                                                     [UIFont systemFontOfSize:17], UITextAttributeFont,
+                                                                     nil]];
+    
+    
 
 }
 

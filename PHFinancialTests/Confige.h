@@ -16,14 +16,10 @@
 //  Created by 匡 on 15/8/4.
 //  Copyright (c) 2015年 boroo.me. All rights reserved.
 //
-//  外网接口
-#define kHTTP @"http://www.equdao.com.cn"
-
-#define nHTTP  @"http://192.168.30.172"
-//#define kHTTP @"http://192.168.10.199"   // 苏的接口
-//#define kHTTP @"http://192.168.10.75"
-// 本地服务器 －－ 链接
-//#define kHTTP @"http://192.168.10.215:9030"
+// 外网IP地址
+//#define kHTTP  @"http://192.168.30.172"
+// 内网IP地址
+#define kHTTP @"http://192.168.30.164:8080"
 
 
 // 客户端参数配置
@@ -145,8 +141,8 @@ typedef enum {
 
 
 /*---------------------------接口---------------------------*/
-#define k_API_MESSAGECODE  [NSString stringWithFormat:@"%@/v1/user/regsms",nHTTP]
-#define k_API_SENDIMAGE  [NSString stringWithFormat:@"%@/v1/dev/upfile/",nHTTP]
+#define k_API_MESSAGECODE  [NSString stringWithFormat:@"%@/v1/user/regsms",kHTTP]
+#define k_API_SENDIMAGE  [NSString stringWithFormat:@"%@/v1/dev/upfile/",kHTTP]
 
 #endif
 

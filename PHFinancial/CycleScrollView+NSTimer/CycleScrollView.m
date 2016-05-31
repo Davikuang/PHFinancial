@@ -8,6 +8,7 @@
 
 #import "CycleScrollView.h"
 #import "NSTimer+Addition.h"
+#import "MyPageControl.h"
 
 @interface CycleScrollView () <UIScrollViewDelegate>
 @property (nonatomic , assign) NSInteger currentPageIndex;
@@ -77,10 +78,11 @@
         self.scrollView.pagingEnabled = YES;
         [self addSubview:self.scrollView];
         //  UIPageControl
-        _page = [[UIPageControl alloc] initWithFrame:CGRectMake(self.width - 2*self.width / 3,self.height - 30,self.width/3, 30)];
+        _page = [[MyPageControl alloc] initWithFrame:CGRectMake(self.width - 2*self.width / 3,self.height - 30,self.width/3, 30)];
         _page.tag = 1001;
         [self addSubview:_page];
         _page.currentPageIndicatorTintColor = [UIColor colorWithHexString:kNumberColor];
+        
     }
     
     return self;
@@ -237,7 +239,7 @@
 }
 #pragma mark 滑动开关
 - (void)layoutSubviews {
-    if (_totalPageCount <= 2) {
+    if (_totalPageCount <= 1) {
         self.userInteractionEnabled = NO;
     }else {
         self.userInteractionEnabled = YES;

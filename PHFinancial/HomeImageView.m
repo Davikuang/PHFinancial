@@ -20,9 +20,11 @@
     return self;
 }
 - (void)tapAction:(UITapGestureRecognizer *)tap {
+    NSLog(@"点击了图片");
     if (self.imageDelegate != nil) {
         // 轮播图 点击后链接地址
-        [self.imageDelegate homeImageWithUrl:self.linkurl];
+        
+//        [self.imageDelegate homeImageWithUrl:self.linkurl];
     }
 }
 /*
