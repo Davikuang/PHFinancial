@@ -9,9 +9,10 @@
 #import "LoginViewController.h"
 #import "MyTextField.h"
 #import "RegistViewController.h"
+#import "ForgetPasswordViewController.h"
 @interface LoginViewController ()<UITextFieldDelegate>{
-    MyTextField *_phoneTF;
-    MyTextField *_passwordTF;
+    UITextField *_phoneTF;
+    UITextField *_passwordTF;
 }
 
 @end
@@ -29,8 +30,11 @@
     self.navigationController.navigationBar.shadowImage=[UIImage new];
     
     [self _initLeftBtn];
-
     
+    // 添加手势
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+    [self.view addGestureRecognizer:tap];
+
     
     CGFloat ImageHeight =  1.0 * kScreenWidth / 3 * 2;
     UIImageView *bannerView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, ImageHeight)];
@@ -44,7 +48,7 @@
     iconView.contentMode = UIViewContentModeScaleAspectFit;
     [bannerView addSubview:iconView];
     
-    iconView.center = CGPointMake(bannerView.center.x,bannerView.center.y - 30 *kScaleX);
+    iconView.center = CGPointMake(bannerView.center.x,bannerView.center.y +3*kScaleX);
     
     UILabel *iconTitle = [[UILabel alloc] initWithFrame:CGRectMake(iconView.left,iconView.bottom + 10, iconView.width, 20)];
     iconTitle.text = @"普汇金服";
@@ -97,7 +101,7 @@
     phoneImage.contentMode = UIViewContentModeScaleAspectFit;
     [tfView addSubview:phoneImage];
     
-    _phoneTF = [[MyTextField alloc] initWithFrame:CGRectMake(0, 0,140,25)];
+    _phoneTF = [[UITextField alloc] initWithFrame:CGRectMake(0, 0,140,25)];
     _phoneTF.font = [UIFont systemFontOfSize:16*kScaleX];
     _phoneTF.placeholder = @"输入手机号";
     _phoneTF.center = CGPointMake(tfView.width/2 + (30 + tfgap)*kScaleX, line.bottom - 15*kScaleX - (25/2)*kScaleY);
@@ -109,10 +113,12 @@
     passImage.image = [UIImage imageNamed:@"lock"];
     passImage.contentMode = UIViewContentModeScaleAspectFit;
     
-    _passwordTF = [[MyTextField alloc] initWithFrame:CGRectMake(0, 0,140,25)];
+    _passwordTF = [[UITextField alloc] initWithFrame:CGRectMake(0, 0,140,25)];
     _passwordTF.font = [UIFont systemFontOfSize:16*kScaleX];
     _passwordTF.placeholder = @"输入密码";
     _passwordTF.center = CGPointMake(tfView.width/2 + (30 + tfgap)*kScaleX, tfView.height - 15*kScaleX - (28/2)*kScaleY);
+    _passwordTF.secureTextEntry = YES;
+    _passwordTF.enablesReturnKeyAutomatically = YES;
     [tfView addSubview:_passwordTF];
     
     [tfView addSubview:passImage];
@@ -145,7 +151,7 @@
     forgetLb.textColor = [UIColor colorWithHexString:kThemeColor];
     forgetLb.text = @"忘记密码？";
     forgetLb.alpha = 0.8;
-    forgetLb.userInteractionEnabled = YES;
+//    forgetLb.userInteractionEnabled = YES;
     forgetLb.textAlignment = 2;
     forgetLb.backgroundColor = [UIColor clearColor];
     
@@ -190,10 +196,8 @@
     cancel.frame = backButton_frame;
     
     // 设置标题
-//    [cancel setTitle:@"设置" forState:UIControlStateNormal];
     [cancel setImage:[UIImage imageNamed:@"cancel"] forState:UIControlStateNormal];
     // 修改样式
-    //leftButton.titleEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
     cancel.titleLabel.font = [UIFont boldSystemFontOfSize:16];
     // 添加事件
     [cancel addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -203,7 +207,21 @@
 
 #pragma mark  注册 登录 找回密码
 - (void)login:(UIButton *)sender {
+    if([BaseUtil isEmpty:_phoneTF.text] == YES){
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请输入手机号"];
+        return;
+    }
+    if (_phoneTF.text.length != 11) {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请输入正确手机号"];
+        return;
+    }
+    if([BaseUtil isEmpty:_passwordTF.text] == YES){
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"密码不能为空"];
+        return;
+    }
     
+    [self login];
+
 }
 - (void)regist:(UIButton *)sender {
     RegistViewController *rgVC = [[RegistViewController alloc] init];
@@ -217,17 +235,84 @@
 }
 //忘记密码
 - (void)forget:(UIButton *)sender {
+    ForgetPasswordViewController *vc = [[ForgetPasswordViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+/*-------------------------网络请求-------------------------*/
+- (void)login{
+    [ProgressHUD show:@"请稍候..."];
+    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    session.responseSerializer = [AFJSONResponseSerializer serializer];
+    //申明返回的结果是json类型
+    session.responseSerializer = [AFJSONResponseSerializer serializer];
+    //申明请求的数据是json类型
+    session.requestSerializer=[AFJSONRequestSerializer serializer];
+    //如果报接受类型不一致请替换一致text/html或别的
+    session.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    // 默认帮助JSON解析，XML，NSXMLParser对象
+    NSDictionary *dic = @{
+                          };
+    NSString *subUrl = [BaseUtil getUrlWithDic:dic withHttp:k_API_LOGIN];
+    NSLog(@"subUrl %@",subUrl);
+    
+    
+    NSDictionary *params = @{
+                             @"mobile":_phoneTF.text,
+                             @"password":[BaseUtil md5:_passwordTF.text],
+                             @"coordX":kCoordX ? kCoordX:@0.0,
+                             @"coordY":kCoordY ? kCoordY:@0.0,
+                             };
+    NSLog(@"params %@",params);
+    
+    [session POST:subUrl
+       parameters:params
+          success:^(NSURLSessionDataTask *task, id responseObject) {
+              [ProgressHUD dismiss];
+              
+              // 获取数据
+              NSDictionary *dic = responseObject;
+              NSLog(@"dic***  %@",dic);
+              NSString *state = [NSString stringWithFormat:@"%@",dic[@"rec"]];
+              NSLog(@" msg %@",dic[@"msg"]);
+              
+              if ([state isEqualToString:@"0"]) {
+                  [[TKAlertCenter defaultCenter] postAlertWithMessage:@"登录成功"];
+                  NSString *token = dic[@"data"][@"token"];
+                  [PHUserManager shareManager].token = token;
+                  [PHUserManager shareManager].token = token;
+                  // 保存用户帐号
+                  [PHUserManager storeAccountInKeychain:_phoneTF.text];
+                  // 保存密码
+                  [PHUserManager storePasswordInKeychain:_passwordTF.text];
+
+                  [self dismissViewControllerAnimated:YES completion:^{
+                      
+                  }];
+              }else {
+                  [BaseUtil errorMesssage:state];
+              }
+              NSLog(@"statusCode == %@",task);
+          }
+          failure:^(NSURLSessionDataTask *task, NSError *error) {
+              [ProgressHUD dismiss];
+              NSLog(@"task %@",task);
+              NSLog(@"error %@",error);
+          }];
+}
+
+
+#pragma mark -- 点击事件
+- (void)tap:(UITapGestureRecognizer *)tap {
+
+    [_passwordTF resignFirstResponder];
+    [_phoneTF resignFirstResponder];
     
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [ProgressHUD dismiss];
 }
-*/
 
 @end

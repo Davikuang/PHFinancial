@@ -55,10 +55,16 @@ static PHUserManager *userManager= nil;
 + (void)storePasswordInKeychain:(NSString*)psd
 {
     if (psd) {
+//        NSString *newPassword = [self newPassword:psd];
         [SFHFKeychainUtils storeUsername:kUserId andPassword:psd
                           forServiceName:kUserPassWord updateExisting:YES error:nil];
     }
 }
+
+//+ (NSString *)newPassword:(NSString *)password{
+//    NSString *psd = [password stringByAppendingString:@"123456abcdefghigklmn"];
+//    return nil;
+//}
 
 // 获取密码
 + (NSString*)getPasswordFromKeychain

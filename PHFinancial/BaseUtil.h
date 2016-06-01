@@ -10,6 +10,8 @@
 
 @interface BaseUtil : NSObject
 
++ (void)validate:(NSString *)text;
+
 +(id)shareManager;
 // 生成二维码
 - (UIImage *)createQRImageWithUrl:(NSString *)url;

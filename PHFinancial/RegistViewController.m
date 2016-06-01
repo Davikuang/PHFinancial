@@ -8,12 +8,14 @@
 
 #import "RegistViewController.h"
 #import "MyTextField.h"
+#import "ProtoclViewController.h"
+#import "FixPasswordViewController.h"
 @interface RegistViewController ()
 {
-    MyTextField *_phoneTF;
-    MyTextField *_passwordTF;
-    MyTextField *_codeTF;
-    MyTextField *_invitorTF;
+    UITextField *_phoneTF;
+    UITextField *_passwordTF;
+    UITextField *_codeTF;
+    UITextField *_invitorTF;
     UIButton *_mesBtn;
 }
 @end
@@ -25,6 +27,9 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"注册";
     [self _initView];
+    // 添加手势
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,11 +80,20 @@
     [self.view addSubview:sureBtn];
     
     // 注册协议
-    UILabel *lb = [[UILabel alloc] initWithFrame:CGRectMake(sureBtn.left, sureBtn.bottom + 3, 300, 20)];
+    UILabel *lb = [[UILabel alloc] initWithFrame:CGRectMake(sureBtn.left, sureBtn.bottom + 4, 300, 20)];
+    lb.userInteractionEnabled = YES;
+    
     lb.text = @"*注册则表示同意《普汇金服服务协议》";
     lb.font = [UIFont systemFontOfSize:12*kScaleX];
     lb.textColor = [UIColor colorWithHexString:kBlackColor];
     [self.view addSubview:lb];
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:lb.text];
+        //设置：在0-3个单位长度内的内容显示成红色
+    [str addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(8, 10)];
+    lb.attributedText = str;
+    
+    UITapGestureRecognizer *labTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labTap:)];
+    [lb addGestureRecognizer:labTap];
     
     // 输入手机号
     UIImageView *phoneImage = [[UIImageView alloc] initWithFrame:CGRectMake(line1.left + 10*kScaleX,line1.bottom - (12)*kScaleY - 24*kScaleY - phoneImageGap, 14, 24*kScaleY)];
@@ -87,7 +101,7 @@
     phoneImage.contentMode = UIViewContentModeScaleAspectFit;
     [self.view addSubview:phoneImage];
     
-    _phoneTF = [[MyTextField alloc] initWithFrame:CGRectMake(0, 0,140,25)];
+    _phoneTF = [[UITextField alloc] initWithFrame:CGRectMake(0, 0,140,25)];
     _phoneTF.font = [UIFont systemFontOfSize:16*kScaleX];
     _phoneTF.placeholder = @"请输入手机号";
     _phoneTF.center = CGPointMake(self.view.width/2 + (10 + tfgap)*kScaleX, line1.bottom - 11*kScaleX - (25/2)*kScaleY);
@@ -101,17 +115,22 @@
     passImage.image = [UIImage imageNamed:@"lock"];
     passImage.contentMode = UIViewContentModeScaleAspectFit;
     [self.view addSubview:passImage];
-    _passwordTF = [[MyTextField alloc] initWithFrame:CGRectMake(0, 0,140,25)];
+    _passwordTF = [[UITextField alloc] initWithFrame:CGRectMake(0, 0,140,25)];
     _passwordTF.font = [UIFont systemFontOfSize:16*kScaleX];
     _passwordTF.placeholder = @"输入密码";
+    
     _passwordTF.center = CGPointMake(self.view.width/2 + (10 + tfgap)*kScaleX, line2.bottom - 10*kScaleX - (28/2)*kScaleY);
     [self.view addSubview:_passwordTF];
     
+    _passwordTF.secureTextEntry = YES;
+    _passwordTF.enablesReturnKeyAutomatically = YES;
+    
     //输入验证码
     
-    _codeTF = [[MyTextField alloc] initWithFrame:CGRectMake(line1.left + 5*kScaleX, 0,140,25)];
+    _codeTF = [[UITextField alloc] initWithFrame:CGRectMake(line1.left + 5*kScaleX, 0,140,25)];
     _codeTF.font = [UIFont systemFontOfSize:16*kScaleX];
     _codeTF.placeholder = @"请输入验证码";
+    _codeTF.keyboardType = UIKeyboardTypeNumberPad;
     _codeTF.center = CGPointMake(_codeTF.center.x, line3.bottom - 10*kScaleX - (28/2)*kScaleY);
     [self.view addSubview:_codeTF];
     
@@ -136,7 +155,7 @@
     invitor.textColor = [UIColor colorWithHexString:kBlackColor];
     [self.view addSubview:invitor];
     
-    _invitorTF = [[MyTextField alloc] initWithFrame:CGRectMake(invitor.right,line3.bottom,140,50*kScaleX)];
+    _invitorTF = [[UITextField alloc] initWithFrame:CGRectMake(invitor.right,line3.bottom,140,50*kScaleX)];
     _invitorTF.font = [UIFont systemFontOfSize:16*kScaleX];
     _invitorTF.keyboardType = UIKeyboardTypeNumberPad;
     _invitorTF.placeholder = @"手机号";
@@ -149,9 +168,12 @@
 /*--------------------------按钮方法----------------------------*/
 // 获取验证码
 - (void)messageCode:(UIButton *)sender {
-    
+    if ([BaseUtil isEmpty:_phoneTF.text] == YES) {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请输入手机号"];
+        return;
+    }
     if (_phoneTF.text.length != 11) {
-        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请输入正确手机号！"];
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请输入正确手机号"];
         return;
     }
     [self getMesCode];
@@ -159,67 +181,24 @@
 // 确定按钮
 - (void)regist:(UIButton *)sender {
     
+    if([BaseUtil isEmpty:_phoneTF.text] == YES){
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请输入手机号"];
+        return;
+    }
     if (_phoneTF.text.length != 11) {
-        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请输入正确手机号！"];
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请输入正确手机号"];
         return;
     }
-    if (_codeTF.text.length < 2) {
-        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请输入短信验证码！"];
+    if([BaseUtil isEmpty:_passwordTF.text] == YES){
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"密码不能为空"];
         return;
     }
-    if (_codeTF.text.length < 2) {
-        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请输入短信验证码！"];
-        return;
-    }
-    if(_passwordTF.text == 0){
-        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请输入密码！"];
+    if ([BaseUtil isEmpty:_codeTF.text] == YES) {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请输入短信验证码"];
         return;
     }
     
-    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
-    session.responseSerializer = [AFJSONResponseSerializer serializer];
-    //申明返回的结果是json类型
-    session.responseSerializer = [AFJSONResponseSerializer serializer];
-    //申明请求的数据是json类型
-    session.requestSerializer=[AFJSONRequestSerializer serializer];
-    //如果报接受类型不一致请替换一致text/html或别的
-    session.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    // 默认帮助JSON解析，XML，NSXMLParser对象
-    NSDictionary *dic = @{
-                          };
-    NSString *subUrl = [BaseUtil getUrlWithDic:dic withHttp:k_API_REGIST];
-    NSLog(@"subUrl %@",subUrl);
-   
-
-    NSDictionary *params = @{
-                             @"mobile":_phoneTF.text,
-                             @"code":_codeTF.text,
-                             @"password":[BaseUtil md5:_passwordTF.text],
-                             @"coordX":kCoordX ? kCoordX:@0.0,
-                             @"coordY":kCoordY ? kCoordY:@0.0,
-                             };
-    
-    [session POST:subUrl
-       parameters:params
-          success:^(NSURLSessionDataTask *task, id responseObject) {
-              // 获取数据
-              NSDictionary *dic = responseObject;
-              NSLog(@"dic***  %@",dic);
-              NSString *state = [NSString stringWithFormat:@"%@",dic[@"rec"]];
-              NSLog(@" msg %@",dic[@"msg"]);
-              
-              if ([state isEqualToString:@"0"]) {
-                  [[TKAlertCenter defaultCenter] postAlertWithMessage:@"验证码获取成功"];
-              }else {
-                  [BaseUtil errorMesssage:state];
-              }
-              NSLog(@"statusCode == %@",task);
-          }
-          failure:^(NSURLSessionDataTask *task, NSError *error) {
-              NSLog(@"task %@",task);
-              NSLog(@"error %@",error);
-          }];
-    
+    [self regist];
 }
 
 /*--------------------------网络请求-------------------------*/
@@ -266,6 +245,90 @@
               NSLog(@"error %@",error);
           }];
     
+}
+
+- (void)regist{
+    [ProgressHUD show:@"请稍候..."];
+    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    session.responseSerializer = [AFJSONResponseSerializer serializer];
+    //申明返回的结果是json类型
+    session.responseSerializer = [AFJSONResponseSerializer serializer];
+    //申明请求的数据是json类型
+    session.requestSerializer=[AFJSONRequestSerializer serializer];
+    //如果报接受类型不一致请替换一致text/html或别的
+    session.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    // 默认帮助JSON解析，XML，NSXMLParser对象
+    NSDictionary *dic = @{
+                          };
+    NSString *subUrl = [BaseUtil getUrlWithDic:dic withHttp:k_API_REGIST];
+    NSLog(@"subUrl %@",subUrl);
+    
+    
+    NSDictionary *params = @{
+                             @"mobile":_phoneTF.text,
+                             @"code":_codeTF.text,
+                             @"password":[BaseUtil md5:_passwordTF.text],
+                             @"coordX":kCoordX ? kCoordX:@0.0,
+                             @"coordY":kCoordY ? kCoordY:@0.0,
+                             };
+    NSLog(@"params %@",params);
+    
+    [session POST:subUrl
+       parameters:params
+          success:^(NSURLSessionDataTask *task, id responseObject) {
+              [ProgressHUD dismiss];
+              
+              // 获取数据
+              NSDictionary *dic = responseObject;
+              NSLog(@"dic***  %@",dic);
+              NSString *state = [NSString stringWithFormat:@"%@",dic[@"rec"]];
+              NSLog(@" msg %@",dic[@"msg"]);
+              
+              if ([state isEqualToString:@"0"]) {
+                  [[TKAlertCenter defaultCenter] postAlertWithMessage:@"注册成功"];
+                  NSString *token = dic[@"data"][@"token"];
+                  [PHUserManager shareManager].token = token;
+                  [PHUserManager shareManager].token = token;
+                  // 保存用户帐号
+                  [PHUserManager storeAccountInKeychain:_phoneTF.text];
+                  // 保存密码
+                  [PHUserManager storePasswordInKeychain:_passwordTF.text];
+
+                  [self dismissViewControllerAnimated:YES completion:^{
+                      
+                  }];
+                  
+              }else {
+                  [BaseUtil errorMesssage:state];
+              }
+              NSLog(@"statusCode == %@",task);
+          }
+          failure:^(NSURLSessionDataTask *task, NSError *error) {
+              NSLog(@"task %@",task);
+              NSLog(@"error %@",error);
+              [ProgressHUD dismiss];
+          }];
+}
+
+#pragma mark -- 点击事件
+- (void)tap:(UITapGestureRecognizer *)tap {
+    [_codeTF resignFirstResponder];
+    [_passwordTF resignFirstResponder];
+    [_phoneTF resignFirstResponder];
+    [_invitorTF resignFirstResponder];
+}
+
+// 点击协议
+- (void)labTap:(UITapGestureRecognizer *)tap {
+    NSLog(@"点击了协议");
+//    ProtoclViewController *vc = [[ProtoclViewController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    FixPasswordViewController *vc = [[FixPasswordViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [ProgressHUD dismiss];
 }
 
 @end

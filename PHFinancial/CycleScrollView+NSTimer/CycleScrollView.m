@@ -181,6 +181,8 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     int contentOffsetX = scrollView.contentOffset.x;
+    
+    NSLog(@" contentOffsetX %d",contentOffsetX);
     if(contentOffsetX >= (2 * CGRectGetWidth(scrollView.frame))) {
         self.currentPageIndex = [self getValidNextPageIndexWithPageIndex:self.currentPageIndex + 1];
         [self configContentViews];

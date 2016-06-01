@@ -152,7 +152,12 @@ typedef enum {
 #define k_API_SENDIMAGE  [NSString stringWithFormat:@"%@/v1/dev/upfile/",kHTTP]
 // 注册接口  /v1/user/reg/
 #define k_API_REGIST  [NSString stringWithFormat:@"%@/v1/user/reg/",kHTTP]
-
+// 登录接口 /v1/user/login/
+#define k_API_LOGIN   [NSString stringWithFormat:@"%@/v1/user/login/",kHTTP]
+// 忘记密码
+#define k_API_RORGETPASSWORD   [NSString stringWithFormat:@"%@/v1/user/login/",kHTTP]
+// 修改密码
+#define k_API_FIXPASSWORD   [NSString stringWithFormat:@"%@/v1/user/login/",kHTTP]
 
 #endif
 

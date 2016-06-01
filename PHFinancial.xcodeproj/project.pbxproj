@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6AB2BCDC1CEB27260066CE16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB2BCDB1CEB27260066CE16 /* main.m */; };
-		6AB2BCDF1CEB27260066CE16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB2BCDE1CEB27260066CE16 /* AppDelegate.m */; };
+		6AB2BCDF1CEB27260066CE16 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6AB2BCDE1CEB27260066CE16 /* AppDelegate.mm */; };
 		6AB2BCE71CEB27260066CE16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AB2BCE61CEB27260066CE16 /* Assets.xcassets */; };
 		6AB2BCEA1CEB27260066CE16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AB2BCE81CEB27260066CE16 /* LaunchScreen.storyboard */; };
 		6AB2BCF51CEB27260066CE16 /* PHFinancialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB2BCF41CEB27260066CE16 /* PHFinancialTests.m */; };
@@ -115,6 +115,21 @@
 		6EEE595D1CFC08E30015017D /* homeItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE595B1CFC08E30015017D /* homeItemView.m */; };
 		6EEE59611CFC31CE0015017D /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE59601CFC31CE0015017D /* SettingViewController.m */; };
 		6EEE59641CFC35700015017D /* NumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE59631CFC35700015017D /* NumberView.m */; };
+		6EFE41EE1CFED0FD000DF8E3 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFE41ED1CFED0FD000DF8E3 /* BaiduMapAPI_Base.framework */; };
+		6EFE41F01CFED10A000DF8E3 /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFE41EF1CFED10A000DF8E3 /* BaiduMapAPI_Location.framework */; };
+		6EFE41F21CFED166000DF8E3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFE41F11CFED166000DF8E3 /* CoreLocation.framework */; };
+		6EFE41F41CFED173000DF8E3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFE41F31CFED173000DF8E3 /* QuartzCore.framework */; };
+		6EFE41F61CFED181000DF8E3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFE41F51CFED181000DF8E3 /* OpenGLES.framework */; };
+		6EFE41F81CFED1A0000DF8E3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFE41F71CFED1A0000DF8E3 /* SystemConfiguration.framework */; };
+		6EFE41FA1CFED27A000DF8E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFE41F91CFED27A000DF8E3 /* CoreGraphics.framework */; };
+		6EFE41FC1CFED288000DF8E3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFE41FB1CFED288000DF8E3 /* Security.framework */; };
+		6EFE41FE1CFED29F000DF8E3 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFE41FD1CFED29F000DF8E3 /* libsqlite3.0.tbd */; };
+		6EFE42001CFED2B9000DF8E3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFE41FF1CFED2B9000DF8E3 /* CoreTelephony.framework */; };
+		6EFE42021CFED2C6000DF8E3 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFE42011CFED2C6000DF8E3 /* libstdc++.6.0.9.tbd */; };
+		6EFE42081CFEDD0F000DF8E3 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6EFE42051CFEDD0F000DF8E3 /* ProgressHUD.bundle */; };
+		6EFE42091CFEDD0F000DF8E3 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE42061CFEDD0F000DF8E3 /* ProgressHUD.m */; };
+		6EFE420C1CFEEA72000DF8E3 /* ProtoclViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE420B1CFEEA72000DF8E3 /* ProtoclViewController.m */; };
+		6EFE420F1CFF048C000DF8E3 /* FixPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE420E1CFF048C000DF8E3 /* FixPasswordViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,7 +153,7 @@
 		6AB2BCD71CEB27260066CE16 /* PHFinancial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PHFinancial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AB2BCDB1CEB27260066CE16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6AB2BCDD1CEB27260066CE16 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		6AB2BCDE1CEB27260066CE16 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6AB2BCDE1CEB27260066CE16 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		6AB2BCE61CEB27260066CE16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6AB2BCE91CEB27260066CE16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6AB2BCEB1CEB27260066CE16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -350,6 +365,24 @@
 		6EEE59601CFC31CE0015017D /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		6EEE59621CFC35700015017D /* NumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberView.h; sourceTree = "<group>"; };
 		6EEE59631CFC35700015017D /* NumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberView.m; sourceTree = "<group>"; };
+		6EFE41ED1CFED0FD000DF8E3 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
+		6EFE41EF1CFED10A000DF8E3 /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
+		6EFE41F11CFED166000DF8E3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6EFE41F31CFED173000DF8E3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6EFE41F51CFED181000DF8E3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		6EFE41F71CFED1A0000DF8E3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6EFE41F91CFED27A000DF8E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6EFE41FB1CFED288000DF8E3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6EFE41FD1CFED29F000DF8E3 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		6EFE41FF1CFED2B9000DF8E3 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		6EFE42011CFED2C6000DF8E3 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		6EFE42051CFEDD0F000DF8E3 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		6EFE42061CFEDD0F000DF8E3 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		6EFE42071CFEDD0F000DF8E3 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		6EFE420A1CFEEA72000DF8E3 /* ProtoclViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtoclViewController.h; sourceTree = "<group>"; };
+		6EFE420B1CFEEA72000DF8E3 /* ProtoclViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProtoclViewController.m; sourceTree = "<group>"; };
+		6EFE420D1CFF048C000DF8E3 /* FixPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixPasswordViewController.h; sourceTree = "<group>"; };
+		6EFE420E1CFF048C000DF8E3 /* FixPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FixPasswordViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,6 +390,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EFE42021CFED2C6000DF8E3 /* libstdc++.6.0.9.tbd in Frameworks */,
+				6EFE42001CFED2B9000DF8E3 /* CoreTelephony.framework in Frameworks */,
+				6EFE41FE1CFED29F000DF8E3 /* libsqlite3.0.tbd in Frameworks */,
+				6EFE41FC1CFED288000DF8E3 /* Security.framework in Frameworks */,
+				6EFE41FA1CFED27A000DF8E3 /* CoreGraphics.framework in Frameworks */,
+				6EFE41F81CFED1A0000DF8E3 /* SystemConfiguration.framework in Frameworks */,
+				6EFE41F61CFED181000DF8E3 /* OpenGLES.framework in Frameworks */,
+				6EFE41F41CFED173000DF8E3 /* QuartzCore.framework in Frameworks */,
+				6EFE41F21CFED166000DF8E3 /* CoreLocation.framework in Frameworks */,
+				6EFE41EE1CFED0FD000DF8E3 /* BaiduMapAPI_Base.framework in Frameworks */,
+				6EFE41F01CFED10A000DF8E3 /* BaiduMapAPI_Location.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +424,15 @@
 		6AB2BCCE1CEB27260066CE16 = {
 			isa = PBXGroup;
 			children = (
+				6EFE42011CFED2C6000DF8E3 /* libstdc++.6.0.9.tbd */,
+				6EFE41FF1CFED2B9000DF8E3 /* CoreTelephony.framework */,
+				6EFE41FD1CFED29F000DF8E3 /* libsqlite3.0.tbd */,
+				6EFE41FB1CFED288000DF8E3 /* Security.framework */,
+				6EFE41F91CFED27A000DF8E3 /* CoreGraphics.framework */,
+				6EFE41F71CFED1A0000DF8E3 /* SystemConfiguration.framework */,
+				6EFE41F51CFED181000DF8E3 /* OpenGLES.framework */,
+				6EFE41F31CFED173000DF8E3 /* QuartzCore.framework */,
+				6EFE41F11CFED166000DF8E3 /* CoreLocation.framework */,
 				6AB2BCD91CEB27260066CE16 /* PHFinancial */,
 				6AB2BCF31CEB27260066CE16 /* PHFinancialTests */,
 				6AB2BCFE1CEB27260066CE16 /* PHFinancialUITests */,
@@ -400,13 +453,14 @@
 		6AB2BCD91CEB27260066CE16 /* PHFinancial */ = {
 			isa = PBXGroup;
 			children = (
+				6EFE41EC1CFED0E9000DF8E3 /* 百度地图 */,
 				6E0615EF1CF6F3C20087E89E /* 启动页面 */,
 				6E0615E41CF6F2E20087E89E /* 登录注册 */,
 				6AB2BDD21CEBFC580066CE16 /* 中间控制器 */,
 				6AB2BDCE1CEBF95D0066CE16 /* 登陆注册页面 */,
 				6AB2BDCD1CEBF9530066CE16 /* 启动页 */,
 				6AB2BCDD1CEB27260066CE16 /* AppDelegate.h */,
-				6AB2BCDE1CEB27260066CE16 /* AppDelegate.m */,
+				6AB2BCDE1CEB27260066CE16 /* AppDelegate.mm */,
 				6AB2BDCA1CEBF8FF0066CE16 /* MainViewController.h */,
 				6AB2BDCB1CEBF8FF0066CE16 /* MainViewController.m */,
 				6AB2BD101CEB29970066CE16 /* 基类 */,
@@ -451,6 +505,7 @@
 		6AB2BD0F1CEB29890066CE16 /* 第三方 */ = {
 			isa = PBXGroup;
 			children = (
+				6EFE42041CFEDCD5000DF8E3 /* ProgressHUD */,
 				6EEE594B1CFBE80D0015017D /* CycleScrollView+NSTimer */,
 				6E474C3A1CF82523005D5600 /* SMPageControll */,
 				6EE5FD491CF5E8B200F8B475 /* MyTextFeild */,
@@ -801,6 +856,10 @@
 				6E0615EA1CF6F33E0087E89E /* RegistViewController.m */,
 				6E0615EC1CF6F3590087E89E /* ForgetPasswordViewController.h */,
 				6E0615ED1CF6F3590087E89E /* ForgetPasswordViewController.m */,
+				6EFE420A1CFEEA72000DF8E3 /* ProtoclViewController.h */,
+				6EFE420B1CFEEA72000DF8E3 /* ProtoclViewController.m */,
+				6EFE420D1CFF048C000DF8E3 /* FixPasswordViewController.h */,
+				6EFE420E1CFF048C000DF8E3 /* FixPasswordViewController.m */,
 			);
 			name = "登录注册";
 			sourceTree = "<group>";
@@ -958,6 +1017,25 @@
 			name = "设置";
 			sourceTree = "<group>";
 		};
+		6EFE41EC1CFED0E9000DF8E3 /* 百度地图 */ = {
+			isa = PBXGroup;
+			children = (
+				6EFE41EF1CFED10A000DF8E3 /* BaiduMapAPI_Location.framework */,
+				6EFE41ED1CFED0FD000DF8E3 /* BaiduMapAPI_Base.framework */,
+			);
+			name = "百度地图";
+			sourceTree = "<group>";
+		};
+		6EFE42041CFEDCD5000DF8E3 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				6EFE42051CFEDD0F000DF8E3 /* ProgressHUD.bundle */,
+				6EFE42061CFEDD0F000DF8E3 /* ProgressHUD.m */,
+				6EFE42071CFEDD0F000DF8E3 /* ProgressHUD.h */,
+			);
+			name = ProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1064,6 +1142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EFE42081CFEDD0F000DF8E3 /* ProgressHUD.bundle in Resources */,
 				6AB2BCEA1CEB27260066CE16 /* LaunchScreen.storyboard in Resources */,
 				6EEE21681CFD549500663DA7 /* fire.png in Resources */,
 				6E474C491CF85C9D005D5600 /* ccmask.png in Resources */,
@@ -1114,6 +1193,7 @@
 				6E0615DC1CF686C60087E89E /* DJImageCollectionView.m in Sources */,
 				6EE5FD4C1CF5E8C200F8B475 /* MyTextField.m in Sources */,
 				6E0615E21CF68E980087E89E /* PHUserManager.m in Sources */,
+				6EFE42091CFEDD0F000DF8E3 /* ProgressHUD.m in Sources */,
 				6AB2BD4F1CEB2EAC0066CE16 /* UIImageView+WebCache.m in Sources */,
 				6AB2BDB51CEB473D0066CE16 /* SCLAlertView.m in Sources */,
 				6EEE595D1CFC08E30015017D /* homeItemView.m in Sources */,
@@ -1123,6 +1203,7 @@
 				6AB2BDCC1CEBF8FF0066CE16 /* MainViewController.m in Sources */,
 				6AB2BD721CEB2F3B0066CE16 /* AFURLConnectionOperation.m in Sources */,
 				6AB2BD4D1CEB2EAC0066CE16 /* UIImage+WebP.m in Sources */,
+				6EFE420F1CFF048C000DF8E3 /* FixPasswordViewController.m in Sources */,
 				6E0615DE1CF686C60087E89E /* UIButton+DJBlock.m in Sources */,
 				6E474C471CF84A7F005D5600 /* TradeView.m in Sources */,
 				6EEE59501CFBE80D0015017D /* CycleScrollView.m in Sources */,
@@ -1151,6 +1232,7 @@
 				6AB2BDB71CEB473D0066CE16 /* SCLAlertViewResponder.m in Sources */,
 				6AB2BDE51CEC11EA0066CE16 /* InfoViewController.m in Sources */,
 				6E474C3D1CF82575005D5600 /* SMPageControl.m in Sources */,
+				6EFE420C1CFEEA72000DF8E3 /* ProtoclViewController.m in Sources */,
 				6E474C301CF8126B005D5600 /* DraftDetailViewController.m in Sources */,
 				6AB2BD481CEB2EAC0066CE16 /* SDWebImageManager.m in Sources */,
 				6AB2BD741CEB2F3B0066CE16 /* AFURLResponseSerialization.m in Sources */,
@@ -1168,7 +1250,7 @@
 				6E0615DA1CF686C60087E89E /* DJCameraManager.m in Sources */,
 				6AB2BD4C1CEB2EAC0066CE16 /* UIImage+MultiFormat.m in Sources */,
 				6AB2BDC81CEB48120066CE16 /* UIView+TKCategory.m in Sources */,
-				6AB2BCDF1CEB27260066CE16 /* AppDelegate.m in Sources */,
+				6AB2BCDF1CEB27260066CE16 /* AppDelegate.mm in Sources */,
 				6AB2BD961CEB383B0066CE16 /* BaseUtil.m in Sources */,
 				6AB2BD471CEB2EAC0066CE16 /* SDWebImageDownloaderOperation.m in Sources */,
 				6AB2BD8D1CEB37780066CE16 /* MJRefreshConst.m in Sources */,
@@ -1330,10 +1412,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PHFinancial",
+				);
 				GCC_PREFIX_HEADER = "/Users/kuang/Desktop/piaoju-ios/PHFinancial/PHFinancialTests/PrefixHeader.pch";
 				INFOPLIST_FILE = PHFinancial/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.puhuipiaoju;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1346,10 +1433,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PHFinancial",
+				);
 				GCC_PREFIX_HEADER = "/Users/kuang/Desktop/piaoju-ios/PHFinancial/PHFinancialTests/PrefixHeader.pch";
 				INFOPLIST_FILE = PHFinancial/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.puhuipiaoju;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

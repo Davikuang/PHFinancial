@@ -186,7 +186,7 @@
     _sumTrade = [[UILabel alloc] initWithFrame:CGRectMake(28*kScaleX, _v5.bottom + 21 * kScaleY - _gap, (kScreenWidth/2 - (28 + 8)*kScaleX), 20)];
     _sumTrade.text = [NSString stringWithFormat:@"累计交易：%@亿",@"2182.36"];
     _sumTrade.textColor = [UIColor colorWithHexString:@"666666"];
-    _sumTrade.textAlignment = NSTextAlignmentLeft;
+    _sumTrade.textAlignment = 2;
     _sumTrade.font = [UIFont systemFontOfSize:15*kScaleX];
     
     [view addSubview:_sumTrade];
@@ -200,7 +200,7 @@
     _lastTrade = [[UILabel alloc] initWithFrame:CGRectMake(vline.right + 7, _v5.bottom + 21 * kScaleY - _gap, (kScreenWidth/2 - (28 + 8)*kScaleX), 20)];
     _lastTrade.text = [NSString stringWithFormat:@"昨日交易：%@千万",@"1.72"];
     _lastTrade.textColor = [UIColor colorWithHexString:@"666666"];
-    _lastTrade.textAlignment = NSTextAlignmentLeft;
+    _lastTrade.textAlignment = 1;
     _lastTrade.font = [UIFont systemFontOfSize:15*kScaleX];
     [view addSubview:_lastTrade];
     
