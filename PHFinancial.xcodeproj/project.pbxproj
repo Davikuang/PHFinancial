@@ -1330,7 +1330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PREFIX_HEADER = /Users/kuang/Desktop/PHFinancial/PHFinancialTests/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "/Users/kuang/Desktop/piaoju-ios/PHFinancial/PHFinancialTests/PrefixHeader.pch";
 				INFOPLIST_FILE = PHFinancial/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1346,7 +1346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PREFIX_HEADER = /Users/kuang/Desktop/PHFinancial/PHFinancialTests/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "/Users/kuang/Desktop/piaoju-ios/PHFinancial/PHFinancialTests/PrefixHeader.pch";
 				INFOPLIST_FILE = PHFinancial/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

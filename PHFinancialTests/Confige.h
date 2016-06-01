@@ -131,6 +131,10 @@ typedef enum {
 // 蓝色字体
 #define kLitleBlue @"0094db"
 
+// 坐标  coordX  coordY
+#define kCoordX  [[NSUserDefaults standardUserDefaults] valueForKey:@"coordX"]
+#define kCoordY  [[NSUserDefaults standardUserDefaults] valueForKey:@"coordY"]
+
 // 购物车通知
 #define kGoodsNumberADDNotification @"kGoodsNumberADDNotification"
 #define kGoodsNumberDecreNotification @"kGoodsNumberDecreADDNotification"
@@ -142,8 +146,13 @@ typedef enum {
 
 
 /*---------------------------接口---------------------------*/
+// 验证码
 #define k_API_MESSAGECODE  [NSString stringWithFormat:@"%@/v1/user/regsms",kHTTP]
+// 发送图片
 #define k_API_SENDIMAGE  [NSString stringWithFormat:@"%@/v1/dev/upfile/",kHTTP]
+// 注册接口  /v1/user/reg/
+#define k_API_REGIST  [NSString stringWithFormat:@"%@/v1/user/reg/",kHTTP]
+
 
 #endif
 

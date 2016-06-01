@@ -23,7 +23,7 @@
         
         [self _initNaviButton];
     }
-    
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithHexString:kThemeColor];
     self.navigationController.navigationBar.translucent = NO;
     
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:

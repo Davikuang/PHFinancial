@@ -351,7 +351,28 @@ void ProviderReleaseData (void *info, const void *data, size_t size){
         [[TKAlertCenter defaultCenter] postAlertWithMessage:@"参数错误"];
     }
     if ([state isEqualToString:@"5"]) {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"配置错误"];
+    }
+    if ([state isEqualToString:@"6"]) {
         [[TKAlertCenter defaultCenter] postAlertWithMessage:@"未知错误"];
+    }
+    if ([state isEqualToString:@"7"]) {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"访问太频繁，稍后再试"];
+    }
+    if ([state isEqualToString:@"8"]) {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"未找到数据"];
+    }
+    if ([state isEqualToString:@"1000"]) {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"手机号已存在"];
+    }
+    if ([state isEqualToString:@"1001"]) {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"手机号不存在"];
+    }
+    if ([state isEqualToString:@"1002"]) {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"密码错误"];
+    }
+    if ([state isEqualToString:@"1003"]) {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"验证码错误"];
     }
 }
 

@@ -246,7 +246,7 @@
      UILabel *bottomTitle = [[UILabel alloc] initWithFrame:CGRectMake(((20+11.5) + 18 + 4) * kScaleX, bottomView.bottom, kScreenWidth - 80, view.bottom -kNavBar -kTabBarHeight - bottomView.bottom)];
     
     if (IS_IPHONE_4) {
-        bottomTitle.frame  = CGRectMake(60, bottomView.bottom + 3, kScreenWidth - 80, view.bottom - bottomView.bottom);
+        bottomTitle.frame  = CGRectMake(43, bottomView.bottom + 3, kScreenWidth - 80, view.bottom - bottomView.bottom);
     }
     bottomTitle.text = @"普汇金服安全保护用户信息、交易安全";
     bottomTitle.font = [UIFont systemFontOfSize:13*kScaleX];
@@ -436,9 +436,13 @@
 //    vc.hidesBottomBarWhenPushed = YES;
 //    self.view.backgroundColor = [UIColor whiteColor];
     
+    // 登录
     LoginViewController *vc = [[LoginViewController alloc] init];
 //    [self.navigationController pushViewController:vc animated:YES];
-    [self presentViewController:vc animated:YES completion:^{
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    [self presentViewController:nav animated:YES completion:^{
         
     }];
     
